@@ -25,3 +25,15 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+
+    lifecycleVersion = "2.2.0"
+    rxJavaVersion = '2.2.2'
+    rxAndroidVersion = '2.1.0'
+    mindorkPlaceHolder = '1.0.3'
+    retrofit2 = '2.4.0'
+    constraintLayoutVersion = '1.1.3'
+    materialCard = '1.1.0'
+    cardViewVersion = '1.0.0'
+}

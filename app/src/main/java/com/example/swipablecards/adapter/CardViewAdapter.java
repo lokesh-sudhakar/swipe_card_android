@@ -1,9 +1,10 @@
-package com.example.swipablecards.model;
+package com.example.swipablecards.adapter;
 
 import android.util.Log;
 import android.widget.TextView;
 
 import com.example.swipablecards.R;
+import com.example.swipablecards.model.CardMetaData;
 import com.mindorks.placeholderview.annotations.Layout;
 import com.mindorks.placeholderview.annotations.Resolve;
 import com.mindorks.placeholderview.annotations.View;

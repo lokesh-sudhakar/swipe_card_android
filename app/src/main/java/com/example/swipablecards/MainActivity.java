@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.swipablecards.databinding.ActivityMainBinding;
 import com.example.swipablecards.model.CardMetaData;
-import com.example.swipablecards.model.CardViewAdapter;
+import com.example.swipablecards.adapter.CardViewAdapter;
 import com.example.swipablecards.viewmodel.CardDataViewModel;
 import com.mindorks.placeholderview.SwipeDecor;
 
