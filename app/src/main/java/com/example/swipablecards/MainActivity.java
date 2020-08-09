@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                     binding.swipeView.addView(new CardViewAdapter(cardMetaData));
                 }
             }
-            binding.progressText.setText(String.valueOf(seenCardContact));
+            binding.progressText.setText(String.format("%s/%s",seenCardContact,maxCards));
             binding.progressBar.setProgress(seenCardContact);
             setBackUndoBtnVisible(enableBackBtn());
         });
@@ -88,8 +88,11 @@ public class MainActivity extends AppCompatActivity {
                 for (CardMetaData cardMetaData : cardsResponse.getData()) {
                     binding.swipeView.addView(new CardViewAdapter(cardMetaData));
                 }
+                binding.progressText.setText(String.format("%s/%s",seenCardContact,maxCards));
                 binding.contentView.setVisibility(View.VISIBLE);
+                binding.noContentView.setVisibility(View.GONE);
             } else {
+                binding.contentView.setVisibility(View.GONE);
                 binding.noContentView.setVisibility(View.VISIBLE);
             }
         });
@@ -104,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         seenCardContact -= ONE;
         binding.progressBar.setProgress(seenCardContact);
         shouldDecrement = false;
-        binding.progressText.setText(String.valueOf(seenCardContact));
+        binding.progressText.setText(String.format("%s/%s",seenCardContact,maxCards));
         binding.swipeView.undoLastSwipe();
         setBackUndoBtnVisible(enableBackBtn());
     }

@@ -1,5 +1,6 @@
 package com.example.swipablecards.retrofit;
 
+import com.example.swipablecards.BuildConfig;
 import com.example.swipablecards.retrofit.interceptor.CustomInterceptor;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -16,7 +17,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitInstance {
     private static Retrofit retrofit = null;
-    private static String BASE_URL = "https://gist.githubusercontent.com";
 
     public static Retrofit getRetrofit() {
         if (retrofit == null) {
@@ -25,7 +25,7 @@ public class RetrofitInstance {
                     .create();
             retrofit = new Retrofit
                     .Builder()
-                    .baseUrl(BASE_URL)
+                    .baseUrl(BuildConfig.BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .client(getHTTPClientForTokenRequest())

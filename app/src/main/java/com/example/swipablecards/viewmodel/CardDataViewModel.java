@@ -1,6 +1,7 @@
 package com.example.swipablecards.viewmodel;
 
 import android.app.Application;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -24,6 +25,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class CardDataViewModel extends AndroidViewModel {
 
+    private static final String TAG = "card_data_view_model";
     private SwipeCardRepository swipeCardRepository;
     private MutableLiveData<CardsResponse> mutableLiveData = new MutableLiveData<>();
     private List<CardMetaData> cardMetaDataList;
@@ -43,8 +45,10 @@ public class CardDataViewModel extends AndroidViewModel {
     }
 
     private void onErrorResponse(Throwable throwable) {
-        if (throwable!=null)
+        if (throwable!=null) {
             mutableLiveData.postValue(new CardsResponse(throwable));
+            Log.d(TAG, "onErrorResponse: "+throwable.getMessage());
+        }
     }
 
     private void onCardDataResponse(CardsResponse cardsResponse) {
