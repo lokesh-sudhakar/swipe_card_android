@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/contentView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/battom_layout_height"
+            android:layout_gravity="bottom"
+            android:gravity="clip_horizontal"
+            android:weightSum="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:layout_weight="0.5"
+                >
+            <ImageButton
+                android:id="@+id/backword"
+                android:layout_width="@dimen/button_width_50"
+                android:layout_height="@dimen/button_width_50"
+                android:layout_marginStart="@dimen/margin_20"
+                android:background="@drawable/ic_back_arrow" />
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_weight="0.5"
+            >
+            <ImageButton
+                android:id="@+id/forward"
+                android:layout_width="@dimen/button_width_50"
+                android:layout_height="@dimen/button_width_50"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:background="@drawable/ic_forward" />
+        </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/margin_20"
+                android:indeterminate="false"
+                android:textAlignment="center"
+                android:minWidth="@dimen/progress_bar_width"
+                android:minHeight="@dimen/progress_bar_height"
+                android:progress="1" />
+
+            <TextView
+                android:id="@+id/progressText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="@dimen/text_size_medium" />
+        </LinearLayout>
+
+        <com.mindorks.placeholderview.SwipePlaceHolderView
+            android:id="@+id/swipeView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+    <ImageView
+        android:id="@+id/noContentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:src="@drawable/error_illustration"/>
+
+    <ProgressBar
+        android:id="@+id/progressView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="visible"
+         />
+
+
+</FrameLayout>
+</layout>
