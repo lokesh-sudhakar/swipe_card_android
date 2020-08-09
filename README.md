@@ -10,16 +10,17 @@ A Tinder like Swipeable card Android application  Written in Java using MVVM and
 
 ## Usage
 
-Project Details:
-    Uses MVVM architecture 
-    Uses retrofit to make API calls
-    Uses RxJava to consume the API call response
-    Uses Mindork's Swipe card library
+### Project Details:
 
-Features:
-    Swipe cards like similar to Google Primer app
-    Undo the last swiped card
-    Progress Indicator
+- Uses MVVM architecture 
+- Uses retrofit to make API calls
+- Uses RxJava to consume the API call response
+- Uses Mindork's Swipe card library
+
+### Features:
+- Swipe cards like similar to Google Primer app
+- Undo the last swiped card
+- Progress Indicator
     
 ### Created & Maintained By
 
